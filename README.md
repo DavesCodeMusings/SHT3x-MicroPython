@@ -1,4 +1,4 @@
-# SHT3x_MicroPython
+# SHT3x-MicroPython
 What you will find here is a MicroPython module for the Sensirion SHT3x series of temperature humidity sensors. It's designed for taking measurements in one-shot mode (on demand as opposed to continuous.)
 
 [![Build SHT3x-MicroPython](https://github.com/DavesCodeMusings/SHT3x-MicroPython/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/DavesCodeMusings/SHT3x-MicroPython/actions/workflows/build.yml)
