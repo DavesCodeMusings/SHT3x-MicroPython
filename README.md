@@ -23,7 +23,7 @@ Otherwise, for traditional, do this:
 from time import sleep_ms
 ```
 
-The sensor is represented as a class called SHT3x. Create a new instance like this:
+Next, create a new instance of the SHT3x sensor class like this:
 
 ```
 i2c = SoftI2C(scl=Pin(I2C_CLOCK), sda=Pin(I2C_DATA))
@@ -37,7 +37,7 @@ i2c = SoftI2C(scl=Pin(I2C_CLOCK), sda=Pin(I2C_DATA))
 sht3x = SHT3x(i2c)
 ```
 
-Then you can request a measurement, wait for the sensor to finish, and read the results.
+Then, you can request a measurement, wait for the sensor to finish, and read the results.
 
 ```
 sht3x.measure()
