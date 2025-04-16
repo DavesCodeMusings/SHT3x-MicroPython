@@ -78,7 +78,7 @@ If something does not go as planned, the class methods will raise an OSError exc
 ### Precision, accuracy, and decimal places
 The values returned by the SHT3x class properties of temperature and humidity are rounded to two decimal places. This does not mean the sensor is accurate down to hundredths of a degree Celsius or hundredths of a percent relative humidity. See the Sensor Performance section of the manufacturer datasheet to determine actual accuracy of the various sensor models.
 
-## Did you fin a bug?
+## Did you find a bug?
 If something's not quite right, use the GitHub issues to report it. Please include:
 
 * The behavior you saw and what caused it
