@@ -55,7 +55,7 @@ def test_read(sht3x):
 
 def test_status(sht3x):
     status = sht3x.status
-    print(status)
+    assert status == bytearray.fromhex("0000")
 
 
 def test_temperature(sht3x):
