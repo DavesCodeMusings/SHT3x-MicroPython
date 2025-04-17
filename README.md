@@ -26,16 +26,14 @@ from time import sleep_ms
 Next, create a new instance of the SHT3x sensor class like this:
 
 ```
+from machine import Pin, SoftI2C
+from sht3x import SHT3x
+
 i2c = SoftI2C(scl=Pin(I2C_CLOCK), sda=Pin(I2C_DATA))
 sht3x = SHT3x(i2c, addr=I2C_ADDR, debug=True)
 ```
 
-Or at minimum, you can rely on defaults of address 0x44 and debug=False.
-
-```
-i2c = SoftI2C(scl=Pin(I2C_CLOCK), sda=Pin(I2C_DATA))
-sht3x = SHT3x(i2c)
-```
+>Or at minimum, you can rely on defaults of address 0x44 and debug=False, like this: `sht3x = SHT3x(i2c)`
 
 Then, you can request a measurement, wait for the sensor to finish, and read the results.
 
