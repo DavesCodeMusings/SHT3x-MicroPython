@@ -1,4 +1,4 @@
-# Mock up for running tests under CPython
+# Mock up an SHT30 for running tests under CPython
 sht3x_command_set = [
     0x2400,  # Measure
     0x3041,  # Clear status register
