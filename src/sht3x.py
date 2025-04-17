@@ -57,7 +57,7 @@ class SHT3x:
             )
         acks = self._i2c.writeto(self._i2c_addr, command.to_bytes(2))
         if acks != 2:
-            OSError("I2C command not acknowledged.")
+            raise OSError("I2C command not acknowledged.")
 
     def reset(self):
         """
