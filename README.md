@@ -45,7 +45,7 @@ print(f"{sht3x.temperature} C")
 print(f"{sht3x.humidity}% RH")
 ```
 
-For a more detailed example, see the `demo()` function inside the `sht3x.py` module.
+For a more detailed example, see the `demo()` function inside `main.py`.
 
 ### Sample output
 Running the module's demo, you'll see something like the following (which includes debugging output.)
