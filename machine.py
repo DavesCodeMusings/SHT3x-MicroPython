@@ -8,16 +8,16 @@ sht3x_command_set = [
 
 
 def Pin(gpio):
-    return gpio
+    return f"Pin({gpio})"
 
 
 class SoftI2C:
     def __init__(self, scl, sda):
-        print(f"Mock I2C created with clock={scl} and data={sda}")
+        print(f"Mock I2C object created with clock={scl} and data={sda}")
         pass
 
     def writeto(self, addr, cmd):
-        print(f"Mock I2C writeto address={hex(addr)} command={cmd.hex()}")
+        print(f"Mock I2C.writeto() address={hex(addr)} command={cmd.hex()}")
         acks = len(cmd)  # ACK sent for each byte received
         if addr == 0x44 and int.from_bytes(cmd) in sht3x_command_set:
             return acks
@@ -25,6 +25,7 @@ class SoftI2C:
             return 0
 
     def readfrom(self, addr, num_bytes):
+        print(f"Mock I2C.readfrom() address={hex(addr)} of {num_bytes} bytes")
         if addr != 0x44:
             assert OSError("ENODEV")
         if num_bytes == 3:
