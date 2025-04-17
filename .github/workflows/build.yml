@@ -9,17 +9,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5 
       - uses: actions/setup-python@v5
+      - name: install dependencies
+        run: |
+          uv venv
+          source .venv/bin/activate
+          uv pip install -r ./pyproject.toml --extra tools
       - name: Linting...
         run: |
-          pip3 install ruff
+          source .venv/bin/activate
           python3 -m ruff check $SRC_FILE
       - name: Running tests...
         run: |
-          python3 run_tests.py
+          source .venv/bin/activate
+          pytest
       - name: Compiling bytecode...
         run: |
-          pip3 install mpy-cross
+          source .venv/bin/activate
           python3 -m mpy_cross $SRC_FILE -o sht3x.mpy
       - name: Committing changes...
         run: |

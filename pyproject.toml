@@ -1,0 +1,18 @@
+[project]
+name = "micropython-sht3x"
+version = "0.1.0"
+# description = "A brief description of your project"
+# authors = [{name = "Your Name", email = "your.email@example.com"}]
+# dependencies = ["requests", "numpy"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src","tests/mocks"]
+testpaths = ["tests"]
+
+[project.optional-dependencies]
+# best installed with : uv pip install -r .\pyproject.toml --extra tools
+tools = [
+    "pytest~=8.3.5",
+    "ruff~=0.11.6",
+    "mpy-cross~=1.24.1",
+]
