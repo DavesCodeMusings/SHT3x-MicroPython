@@ -16,7 +16,7 @@ jobs:
           python3 -m ruff check $SRC_FILE
       - name: Running tests...
         run: |
-          python3 ./runtests.py
+          python3 run_tests.py
       - name: Compiling bytecode...
         run: |
           pip3 install mpy-cross
