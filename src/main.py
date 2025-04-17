@@ -3,6 +3,7 @@ from machine import Pin, SoftI2C
 from time import sleep_ms
 from sht3x import SHT3x
 
+
 def demo():
     # Values for ESP32 Devkit V1 (30-pin board with four corner mounting holes)
     # Adjust as needed for other boards.
