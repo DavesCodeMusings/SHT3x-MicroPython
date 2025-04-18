@@ -5,8 +5,8 @@
 # machine.py and micropython.py for helper code that mocks up
 # i2c and const() to work with CPython.
 from sys import path
-path.insert(0, 'tests/mock')
-path.insert(1, 'src')
+path.insert(0, 'src')
+path.insert(1, 'tests/mock')
 
 from machine import Pin, SoftI2C
 from sht3x import SHT3x
