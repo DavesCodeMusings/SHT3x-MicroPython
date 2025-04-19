@@ -1,0 +1,6 @@
+{
+    "urls": [
+      ["sht3x.mpy", "github:DavesCodeMusings/SHT3x-MicroPython/sht3x.mpy"]
+    ],
+    "version": "0.1"
+  }
