@@ -32,6 +32,17 @@ def demo():
         print(f"{sht3x.temperature} C")
         print(f"{sht3x.humidity}% RH")
 
+    # The heater can be used to clear condensation from the sensor, but will
+    # affect readings made immediately after.
+    sht3x.set_heater(1)
+    sleep_ms(2000)
+    sht3x.set_heater(0)
+    sht3x.measure()
+    sleep_ms(SHT3x.MEASUREMENT_WAIT_TIME_mS)
+    sht3x.read()
+    print(f"{sht3x.temperature} C")
+    print(f"{sht3x.humidity}% RH")
+
 
 if __name__ == "__main__":
     demo()

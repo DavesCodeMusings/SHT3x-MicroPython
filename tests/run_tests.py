@@ -48,6 +48,22 @@ def test_clear_status(sht3x):
     sht3x.clear_status()
 
 
+def test_set_heater_1(sht3x):
+    sht3x.set_heater(1)
+
+
+def test_set_heater_0(sht3x):
+    sht3x.set_heater(0)
+
+
+def test_set_heater_true(sht3x):
+    sht3x.set_heater(1)
+
+
+def test_set_heater_false(sht3x):
+    sht3x.set_heater(0)
+
+
 def test_measure(sht3x):
     sht3x.measure()
 
@@ -79,6 +95,10 @@ test_send_command(sht3x)
 test_send_command_invalid_addr(sht3x_invalid_addr)
 test_reset(sht3x)
 test_clear_status(sht3x)
+test_set_heater_1(sht3x)
+test_set_heater_0(sht3x)
+test_set_heater_true(sht3x)
+test_set_heater_false(sht3x)
 test_measure(sht3x)
 test_read(sht3x)
 test_status(sht3x)

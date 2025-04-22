@@ -2,6 +2,8 @@
 sht3x_command_set = [
     0x2400,  # Measure
     0x3041,  # Clear status register
+    0x3066,  # Heater off
+    0x306D,  # Heater on
     0x30A2,  # Soft reset
     0xF32D,  # Status
 ]

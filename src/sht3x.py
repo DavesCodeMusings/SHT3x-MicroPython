@@ -14,6 +14,8 @@ class SHT3x:
     RESET_COMMAND = const(0x30A2)  # Soft reset / re-initialization
     STATUS_COMMAND = const(0xF32D)
     CLEAR_STATUS_COMMAND = const(0x3041)
+    HEATER_ON_COMMAND = const(0x306D)
+    HEATER_OFF_COMMAND = const(0x3066)
     MEASURE_COMMAND = const(0x2400)  # High repeatability, no clock stretch
     COMMAND_WAIT_TIME_mS = const(2)  # Max time for most commands to process
     MEASUREMENT_WAIT_TIME_mS = const(16)  # Max time for high repeatability
@@ -74,6 +76,17 @@ class SHT3x:
         if self._debug:
             print("CLEAR_STATUS requested.")
         self._send_command(SHT3x.CLEAR_STATUS_COMMAND)
+
+    def set_heater(self, state):
+        """
+        Set built-in heater to on/off as indicated by state boolean.
+        """
+        if self._debug:
+            print("Setting heater on state to:", state)
+        if state:
+           self._send_command(SHT3x.HEATER_ON_COMMAND)
+        else:
+            self._send_command(SHT3x.HEATER_OFF_COMMAND)
 
     def measure(self):
         """
