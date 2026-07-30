@@ -1,6 +1,7 @@
 name: mpy build
 on:
-  push
+  push:
+  workflow_dispatch:
 env:
   SRC_FILE: src/sht3x.py
 permissions:
