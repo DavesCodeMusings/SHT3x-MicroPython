@@ -1,5 +1,6 @@
 name: mpy build
-on: push
+on:
+  push
 env:
   SRC_FILE: src/sht3x.py
 permissions:
