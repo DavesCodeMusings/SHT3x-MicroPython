@@ -10,6 +10,13 @@ This is done to facilitate use with asynchronous code.
 
 Rather than having a built-in `time.sleep_ms()` wasting time inside the module, your async program can do `await asyncio.sleep_ms()` instead. This lets other tasks run while waiting for the sensor.
 
+## How can I install it?
+Just use MicroPython's _MIP_ package management tool.
+
+```
+mpremote mip install github:DavesCodeMusings/SHT3x-MicroPython
+```
+
 ## How can I use it?
 First, if you're using asyncio, do this:
 
@@ -17,7 +24,7 @@ First, if you're using asyncio, do this:
 from asyncio import sleep_ms 
 ```
 
-Otherwise, for traditional, do this:
+Otherwise, for traditional non-async, do this:
 
 ```
 from time import sleep_ms
